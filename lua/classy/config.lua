@@ -9,7 +9,10 @@ local defaults = {
     html = [[ ((attribute_name) @attr_name (#eq? @attr_name "class") (quoted_attribute_value (attribute_value) @attr_value)) ]],
     javascript = [[
       ;; jsx
-      ((property_identifier) @attr_name (#eq? @attr_name "class") [(jsx_expression (_)?) (string)] @attr_value) ]],
+      ((property_identifier) @attr_name (#eq? @attr_name "className") [(jsx_expression (_)?) (string)] @attr_value) ]],
+    typescript = [[
+      ;; tsx
+      ((property_identifier) @attr_name (#eq? @attr_name "className") [(tsx_expression (_)?) (string)] @attr_value) ]],
     svelte = [[ ((attribute_name) @attr_name (#eq? @attr_name "class") (quoted_attribute_value (attribute_value) @attr_value)) ]],
   },
 }
